@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import styles from "../../styles/Fees.module.scss";
+import styles from "../../styles/Blocks.module.scss";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -15,8 +15,8 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Fees() {
-  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
+export default function Blocks() {
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_BLOCKS, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
       if (error.status === 404) return;
@@ -30,16 +30,16 @@ export default function Fees() {
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
 
+  const numberFormat = (num) => {
+    const options = { maximumFractionDigits: 0 };
+    return new Intl.NumberFormat("en-US", options).format(num);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.feesBox}>
-        Low priority <span>{data.hourFee} sat/vB</span>
-      </div>
-      <div className={styles.feesBox}>
-        Medium priority <span>{data.halfHourFee} sat/vB</span>
-      </div>
-      <div className={styles.feesBox}>
-        High priority <span>{data.fastestFee} sat/vB</span>
+      <div className={styles.mempoolBox}>
+      Latest Blocks
+      <div></div>
       </div>
     </div>
   );
