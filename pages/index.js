@@ -1,27 +1,36 @@
-import { useEffect, useState } from "react";
+import useSWR, { SWRConfig } from "swr";
+
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  // If the status code is not in the range 200-299,
+  // we still try to parse and throw it.
+  if (!res.ok) {
+    const error = new Error("An error occurred while fetching the data.");
+    // Attach extra info to the error object.
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
+  }
+  return res.json();
+};
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API, fetcher, {
+    onErrorRetry: (error, revalidate, { retryCount }) => {
+      // Never retry on 404.
+      if (error.status === 404) return;
+      // Only retry up to 10 times.
+      if (retryCount >= 10) return;
+      // Retry after 5 seconds.
+      setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 5000);
+    },
+  });
 
-  const fetchData = () => {
-    async function loadData() {
-      const response = await fetch(process.env.NEXT_PUBLIC_API);
-      const fetchedData = await response.json();
-      setData(fetchedData);
-    }
-    loadData();
-  };
-
-  useEffect(() => {
-    fetchData();
-    const interval = setInterval(() => {
-      fetchData();
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
+  if (error) return "An error has occurred.";
+  if (!data) return "Loading...";
 
   console.log(data);
+
   return (
     <div>
       <div>Fastest fee: {data.fastestFee}</div>
@@ -30,10 +39,3 @@ export default function Home() {
     </div>
   );
 }
-
-/* Home.getInitialProps = async () => {
-  const response = await fetch("https://mempool.space/api/v1/fees/recommended");
-  const fetchedData = await response.json();
-  return {data: fetchedData};
-};
- */
