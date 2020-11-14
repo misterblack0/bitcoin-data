@@ -25,6 +25,11 @@
       color: #fff;
     }
   }
+
+  .table {
+    background-color: red;
+    border: 1px solid white;
+  }
   
   @media (max-width: 600px) {
     .grid {
