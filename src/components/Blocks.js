@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import Table from "./Table";
 import styles from "../../styles/Blocks.module.scss";
 
@@ -29,29 +29,31 @@ export default function Blocks() {
     },
   });
 
+  const numberFormat = (num) => {
+    const options = { minimumFractionDigits: 0,
+      maximumFractionDigits: 0,};
+    return new Intl.NumberFormat("en-US", options).format(num);
+  };
+
   const columns = useMemo(() => [
     {
       Header: "Height",
-      accessor: "data.height",
-    },
-    {
-      Header: "Mined",
-      accessor: "data.tx_count",
+      accessor: (item) => <div>{item.height}</div>,
     },
     {
       Header: "Txes",
-      accessor: "data.tx",
+      accessor: (item) => <div>{item.tx_count}</div>,
+    },
+    {
+      Header: "Block Size",
+      accessor: (item) => <div>{numberFormat(item.size)} MB</div>,
     },
   ]);
 
-  console.log(data);
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
 
-  /*  const numberFormat = (num) => {
-    const options = { maximumFractionDigits: 0 };
-    return new Intl.NumberFormat("en-US", options).format(num);
-  }; */
+  
 
   return (
     <div>
