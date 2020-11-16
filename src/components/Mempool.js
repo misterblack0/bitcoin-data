@@ -43,9 +43,6 @@ export default function Mempool() {
       <div className={styles.mempoolBox}>
         Unconfirmed <span>{numberFormat(data.count)}</span>
       </div>
-
-
-      
     </div>
   );
 }

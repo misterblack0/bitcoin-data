@@ -1,4 +1,6 @@
 import useSWR from "swr";
+import React, { useMemo } from "react";
+import Table from "./Table";
 import styles from "../../styles/Blocks.module.scss";
 
 const fetcher = async (url) => {
@@ -27,77 +29,33 @@ export default function Blocks() {
     },
   });
 
+  const columns = useMemo(() => [
+    {
+      Header: "Height",
+      accessor: "data.height",
+    },
+    {
+      Header: "Mined",
+      accessor: "data.tx_count",
+    },
+    {
+      Header: "Txes",
+      accessor: "data.tx",
+    },
+  ]);
+
+  console.log(data);
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
 
- /*  const numberFormat = (num) => {
+  /*  const numberFormat = (num) => {
     const options = { maximumFractionDigits: 0 };
     return new Intl.NumberFormat("en-US", options).format(num);
   }; */
 
-  
-
-/*   const columns = useMemo(() => [
-    {
-      Header: "Height",
-      accessor: "data[1]",
-    },
-    {
-      Header: "Size",
-      accessor: "data[2]",
-    },
-    {
-      Header: "Tx Count",
-      accessor: "data[3]",
-    },
-  ]); */
-
- console.log(data);
-
   return (
     <div>
-
-
-
-<thead>
-        <tr>
-            <th>Height</th>
-            <th>Mined</th>
-            <th>Txs</th>
-            <th>Filled</th>
-        </tr>
-
-    </thead>
-
-{
-  data.map(item => {
-    return (
-<div>
-
-
-
-<table className={styles.table}>
-
-
-    <tbody>
-        <tr>
-            <td>{item.height}</td>
-            <td>{item.height}</td>
-            <td>{item.tx_count}</td>
-        </tr>
-    </tbody>
-
-</table>
-
-
-
-
-      </div>
-    );
-  })
-}
-
-     {/*  <Table columns={columns} data={data} /> */}
+      <Table columns={columns} data={data} />
     </div>
   );
 }
