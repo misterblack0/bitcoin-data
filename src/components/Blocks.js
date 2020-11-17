@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import { useMemo } from "react";
 import Table from "./Table";
-import styles from "../../styles/Blocks.module.scss";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -29,11 +28,17 @@ export default function Blocks() {
     },
   });
 
-  const numberFormat = (num) => {
-    const options = { minimumFractionDigits: 0,
-      maximumFractionDigits: 0,};
-    return new Intl.NumberFormat("en-US", options).format(num);
-  };
+  function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return "0 Bytes";
+
+    const k = 1000; // Change k = 1000 or sizes = ["..."] as you want (bits or bytes)
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+  }
 
   const columns = useMemo(() => [
     {
@@ -41,19 +46,17 @@ export default function Blocks() {
       accessor: (item) => <div>{item.height}</div>,
     },
     {
-      Header: "Txes",
+      Header: "Txs",
       accessor: (item) => <div>{item.tx_count}</div>,
     },
     {
       Header: "Block Size",
-      accessor: (item) => <div>{numberFormat(item.size)} MB</div>,
+      accessor: (item) => <div>{formatBytes(item.size)}</div>,
     },
   ]);
 
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
-
-  
 
   return (
     <div>
