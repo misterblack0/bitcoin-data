@@ -19,8 +19,9 @@ export default function Table({ columns, data }) {
     - react-table doesn't have UI, it's headless. We just need to put the react-table props from the Hooks, and it will do its magic automatically
   */
   return (
-    <table className={styles.container} {...getTableProps()}>
-    
+    <div className={styles.container}>
+      <h1 className={styles.cardTitle}>Latest blocks</h1>
+    <table {...getTableProps()}>
       <thead className={styles.header}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -43,5 +44,6 @@ export default function Table({ columns, data }) {
         })}
       </tbody>
     </table>
+    </div>
   );
 }

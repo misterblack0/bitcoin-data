@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import Table from "./Table";
 
 const fetcher = async (url) => {
@@ -59,8 +59,8 @@ export default function Blocks() {
   if (!data) return "Loading...";
 
   return (
-    <div>
+    <Fragment>
       <Table columns={columns} data={data} />
-    </div>
+    </Fragment>
   );
 }

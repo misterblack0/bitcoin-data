@@ -38,10 +38,10 @@ export default function Mempool() {
   return (
     <div className={styles.container}>
       <div className={styles.mempoolBox}>
-        Mempool size <span></span>
+        <h1>Mempool size</h1> <span></span>
       </div>
       <div className={styles.mempoolBox}>
-        Unconfirmed <span>{numberFormat(data.count)}</span>
+      <h1>Unconfirmed</h1> <span>{numberFormat(data.count)}</span>
       </div>
     </div>
   );

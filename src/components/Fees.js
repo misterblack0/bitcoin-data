@@ -33,13 +33,13 @@ export default function Fees() {
   return (
     <div className={styles.container}>
       <div className={styles.feesBox}>
-        Low priority <span>{data.hourFee} sat/vB</span>
+      <h1>Low priority</h1> <span>{data.hourFee} sat/vB</span>
       </div>
       <div className={styles.feesBox}>
-        Medium priority <span>{data.halfHourFee} sat/vB</span>
+      <h1>Medium priority</h1> <span>{data.halfHourFee} sat/vB</span>
       </div>
       <div className={styles.feesBox}>
-        High priority <span>{data.fastestFee} sat/vB</span>
+      <h1>High priority</h1> <span>{data.fastestFee} sat/vB</span>
       </div>
     </div>
   );

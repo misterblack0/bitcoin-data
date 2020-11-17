@@ -11,7 +11,7 @@
 }
 
 .mempoolBox {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   width: 10rem;
   height: 4rem;
   display: flex;
@@ -27,8 +27,5 @@
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+  
 }
