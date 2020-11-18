@@ -5,10 +5,10 @@ import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.gridContainer}>
       <Fees />
-      <Mempool />
-      <Blocks />
+    {/*   <Mempool /> */}
+      {/* <Blocks /> */}
     </div>
   );
 }

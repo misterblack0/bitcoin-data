@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import useSWR from "swr";
 import styles from "../../styles/Mempool.module.scss";
 
@@ -36,13 +37,13 @@ export default function Mempool() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.mempoolBox}>
-        <h1>Mempool size</h1> <span></span>
-      </div>
-      <div className={styles.mempoolBox}>
-      <h1>Unconfirmed</h1> <span>{numberFormat(data.count)}</span>
-      </div>
+    <Fragment>
+    <div className={styles.mempoolContainer}>
+      
     </div>
+    <div className={styles.unconfirmedContainer}>
+      <h1>Unconfirmed txs</h1> <span>{numberFormat(data.count)}</span>
+      </div>
+      </Fragment>
   );
 }

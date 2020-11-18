@@ -31,7 +31,7 @@ export default function Fees() {
   if (!data) return "Loading...";
 
   return (
-    <div className={styles.container}>
+    <div className={styles.feesContainer}>
       <div className={styles.feesBox}>
       <h1>Low priority</h1> <span>{data.hourFee} sat/vB</span>
       </div>

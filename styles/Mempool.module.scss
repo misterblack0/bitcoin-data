@@ -1,24 +1,23 @@
-.container {
+.mempoolContainer {
   height: 10rem;
   width: 30rem;
-  padding: 0 0.5rem;
-  background-color: #323232;
+  padding: 8rem;
+  background-color: #24204B;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  
+  border-radius: 3rem;
 }
 
-.mempoolBox {
-  font-size: 1.8rem;
+.unconfirmedContainer {
+  font-size: 1rem;
   width: 10rem;
   height: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  color: #14ffec;
+  color: #5B568F;
 
   & span {
     font-size: 1rem;
