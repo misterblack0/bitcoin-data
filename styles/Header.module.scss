@@ -1,0 +1,23 @@
+.container {
+  height: 8rem;
+  background-color: #24204B;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  color: #FFF;
+  margin-bottom: 3rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.navbar {
+    width: 30rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link {
+    font-size: 1.5rem;
+}

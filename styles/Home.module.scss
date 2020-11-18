@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 1fr 1fr;
-  gap: 30px 30px;
-  margin: 0 100px;
+  gap: 3rem 3rem;
+  /* margin: 0 10rem; */ // not working -- to be inspected
 }
 
 .feesContainer {
