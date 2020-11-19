@@ -1,23 +1,30 @@
+.wrapper {
+  margin: 0 6rem;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 3rem 3rem;
-  /* margin: 0 10rem; */ // not working -- to be inspected
+  grid-template-areas:
+    "feesContainer feesContainer feesContainer feesContainer"
+    "mempoolContainer mempoolContainer mempoolContainer unconfirmedContainer"
+    "blocksContainer blocksContainer blocksContainer blocksContainer";
 }
 
 .feesContainer {
-  grid-area: 1 / 1 / 2 / 4;
+  grid-area: feesContainer;
 }
 
 .mempoolContainer {
-  grid-area: 2 / 1 / 3 / 4;
-}
-
-.blocksContainer {
-  grid-area: 3 / 1 / 4 / 4;
+  grid-area: mempoolContainer;
 }
 
 .unconfirmedContainer {
-  grid-area: 2 / 3 / 3 / 4;
+  grid-area: unconfirmedContainer;
+}
+
+.blocksContainer {
+  grid-area: blocksContainer;
 }

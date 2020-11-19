@@ -28,7 +28,7 @@ export default function Fees() {
   });
 
   if (error) return "An error has occurred.";
-  if (!data) return "Loading...";
+  if (!data) return <span className={styles.loader}></span>;
 
   return (
     <div className={styles.container}>
