@@ -31,15 +31,20 @@ export default function Fees() {
   if (!data) return "Loading...";
 
   return (
-    <div className={styles.feesContainer}>
-      <div className={styles.feesBox}>
-      <h1>Low priority</h1> <span>{data.hourFee} sat/vB</span>
-      </div>
-      <div className={styles.feesBox}>
-      <h1>Medium priority</h1> <span>{data.halfHourFee} sat/vB</span>
-      </div>
-      <div className={styles.feesBox}>
-      <h1>High priority</h1> <span>{data.fastestFee} sat/vB</span>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>
+        Bitcoin <span>Fees</span>
+      </h1>
+      <div className={styles.feesContainer}>
+        <div className={styles.feesBox}>
+          <h2>Low priority</h2> <span>{data.hourFee} sat / vB</span>
+        </div>
+        <div className={styles.feesBox}>
+          <h2>Medium priority</h2> <span>{data.halfHourFee} sat / vB</span>
+        </div>
+        <div className={styles.feesBox}>
+          <h2>High priority</h2> <span>{data.fastestFee} sat / vB</span>
+        </div>
       </div>
     </div>
   );
