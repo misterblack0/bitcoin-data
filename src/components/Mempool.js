@@ -29,7 +29,7 @@ export default function Mempool() {
   });
 
   if (error) return "An error has occurred.";
-  if (!data) return "Loading...";
+  if (!data) return <span className={styles.loader}></span>;
 
   const numberFormat = (num) => {
     const options = { maximumFractionDigits: 0 };

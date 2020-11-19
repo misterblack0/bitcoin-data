@@ -1,22 +1,5 @@
 .mempoolContainer {
-  height: 10rem;
-
-  padding: 8rem;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3rem;
-}
-
-.unconfirmedContainer {
-  height: 35rem;
-  width: 100%;
-  background-color: #24204b;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+background: red;
 }
 
 @media (max-width: 600px) {

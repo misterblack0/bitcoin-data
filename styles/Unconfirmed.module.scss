@@ -1,0 +1,29 @@
+.container {
+  background-color: #24204b;
+  height: 21rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  height: 6rem;
+  padding-left: 3rem;
+  background-color: #2e285f;
+  color: #fff;
+}
+
+.data {
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

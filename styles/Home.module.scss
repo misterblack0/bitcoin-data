@@ -6,25 +6,44 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 3rem 3rem;
+  gap: 30px 30px;
   grid-template-areas:
-    "feesContainer feesContainer feesContainer feesContainer"
-    "mempoolContainer mempoolContainer mempoolContainer unconfirmedContainer"
-    "blocksContainer blocksContainer blocksContainer blocksContainer";
+    "fees fees fees fees"
+    "mempool mempool mempool unconfirmed"
+    "blocks blocks blocks blocks";
 }
 
-.feesContainer {
-  grid-area: feesContainer;
+.fees {
+  grid-area: fees;
 }
 
-.mempoolContainer {
-  grid-area: mempoolContainer;
+.mempool {
+  grid-area: mempool;
 }
 
-.unconfirmedContainer {
-  grid-area: unconfirmedContainer;
+.unconfirmed {
+  grid-area: unconfirmed;
 }
 
-.blocksContainer {
-  grid-area: blocksContainer;
+.blocks {
+  grid-area: blocks;
+}
+
+.loader {
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: progress 2s ease-in-out infinite;
+  animation: progress 2s ease-in-out infinite;
+  background: #2e324e no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    #5d6182,
+    hsla(0, 0%, 100%, 0)
+  );
+  background-size: 200px 100%;
+  border-radius: 4px;
+  width: 100%;
+  height: 14px;
+  display: inline-block;
 }
