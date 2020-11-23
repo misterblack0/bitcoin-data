@@ -2,31 +2,31 @@
   margin: 0 6rem;
 }
 
-.grid-container {
+.gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 30px 30px;
   grid-template-areas:
-    "fees fees fees fees"
-    "mempool mempool mempool unconfirmed"
-    "blocks blocks blocks blocks";
+    "headerContainer headerContainer headerContainer headerContainer"
+    "feesContainer feesContainer feesContainer feesContainer"
+    "mempoolContainer mempoolContainer mempoolContainer unconfirmedContainer"
+    "blocksContainer blocksContainer blocksContainer blocksContainer";
 }
-
-.fees {
-  grid-area: fees;
+.headerContainer {
+  grid-area: headerContainer;
 }
-
-.mempool {
-  grid-area: mempool;
+.feesContainer {
+  grid-area: feesContainer;
 }
-
-.unconfirmed {
-  grid-area: unconfirmed;
+.unconfirmedContainer {
+  grid-area: unconfirmedContainer;
 }
-
-.blocks {
-  grid-area: blocks;
+.mempoolContainer {
+  grid-area: mempoolContainer;
+}
+.blocksContainer {
+  grid-area: blocksContainer;
 }
 
 .loader {

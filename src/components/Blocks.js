@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { Fragment, useMemo } from "react";
 import Table from "./Table";
+import styles from "../../styles/Blocks.module.scss";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
