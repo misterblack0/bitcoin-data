@@ -10,21 +10,19 @@ export default function Home() {
     <div className={styles.gridContainer}>
       <div className={styles.headerContainer}>
         <Header />
-
-        <div className={styles.feesContainer}>
-          <Fees />
-        </div>
-        <div className={styles.mempoolContainer}>
-          <Mempool />
-        </div>
-        <div className={styles.unconfirmedContainer}>
-          <Unconfirmed />
-        </div>
-
-        <div className={styles.blocksContainer}>
-          <Blocks />
-        </div>
       </div>
+      <div className={styles.feesContainer}>
+        <Fees />
+      </div>
+      <div className={styles.mempoolContainer}>
+        <Mempool />
+      </div>
+      <div className={styles.unconfirmedContainer}>
+        <Unconfirmed />
+      </div>
+      {/* <div className={styles.blocksContainer}>
+        <Blocks />
+      </div> */}
     </div>
   );
 }

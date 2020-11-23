@@ -1,12 +1,8 @@
-.wrapper {
-  margin: 0 6rem;
-}
-
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 30px 30px;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+  gap: 5rem 0.1rem;
   grid-template-areas:
     "headerContainer headerContainer headerContainer headerContainer"
     "feesContainer feesContainer feesContainer feesContainer"
@@ -18,32 +14,17 @@
 }
 .feesContainer {
   grid-area: feesContainer;
+  padding: 0 5rem;
 }
 .unconfirmedContainer {
   grid-area: unconfirmedContainer;
+  padding: 0 5rem;
 }
 .mempoolContainer {
   grid-area: mempoolContainer;
+  padding: 0 5rem;
 }
 .blocksContainer {
   grid-area: blocksContainer;
-}
-
-.loader {
-  overflow: hidden;
-  position: relative;
-  -webkit-animation: progress 2s ease-in-out infinite;
-  animation: progress 2s ease-in-out infinite;
-  background: #2e324e no-repeat;
-  background-image: linear-gradient(
-    90deg,
-    hsla(0, 0%, 100%, 0),
-    #5d6182,
-    hsla(0, 0%, 100%, 0)
-  );
-  background-size: 200px 100%;
-  border-radius: 4px;
-  width: 100%;
-  height: 14px;
-  display: inline-block;
+  padding: 0 5rem;
 }

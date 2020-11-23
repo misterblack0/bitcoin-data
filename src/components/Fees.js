@@ -33,7 +33,7 @@ export default function Fees() {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>
-        Bitcoin <span>Fees</span>
+        Bitcoin Fees
       </h1>
       <div className={styles.feesContainer}>
         <div className={styles.feesBox}>

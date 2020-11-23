@@ -37,19 +37,10 @@ export default function Mempool() {
   };
 
   return (
-    <Fragment>
-{/*       <div className={styles.mempoolContainer}>
-        <h1 className={styles.heading}>Mempool</h1>
-      </div> */}
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Mempool Chart</h1>
 
-      <div className={styles.container}>
-      <h1 className={styles.heading}>
-       Unconfirmed
-      </h1>
-      <div className={styles.unconfirmedContainer}>
-      <div>{numberFormat(data.count)}</div>
-      </div>
+      <div className={styles.chart}></div>
     </div>
-    </Fragment>
   );
 }

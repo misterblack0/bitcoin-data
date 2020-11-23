@@ -1,26 +1,44 @@
-.mempoolContainer {
-background: red;
+.container {
+  height: 35rem;
+  background-color: #24204b;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 6rem;
+  background-color: #2e285f;
+  color: #fff;
+}
+
+.chart {
+  background-color: #24204b;
+  
 }
 
 .loader {
-    overflow: hidden;
-    position: relative;
-    -webkit-animation: progress 2s ease-in-out infinite;
-    animation: progress 2s ease-in-out infinite;
-    background: #2e324e no-repeat;
-    background-image: linear-gradient(
-      90deg,
-      hsla(0, 0%, 100%, 0),
-      #5d6182,
-      hsla(0, 0%, 100%, 0)
-    );
-    background-size: 200px 100%;
-    border-radius: 4px;
-    width: 100%;
-    height: 14px;
-    display: inline-block;
-  }
-  
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: progress 2s ease-in-out infinite;
+  animation: progress 2s ease-in-out infinite;
+  background: #2e324e no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    #5d6182,
+    hsla(0, 0%, 100%, 0)
+  );
+  background-size: 200px 100%;
+  border-radius: 4px;
+  width: 100%;
+  height: 14px;
+  display: inline-block;
+}
 
 @media (max-width: 600px) {
 }

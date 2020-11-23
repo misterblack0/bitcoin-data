@@ -5,7 +5,6 @@
   align-items: center;
   padding-left: 4rem;
   color: #fff;
-  margin-bottom: 3rem;
 }
 
 .logo {
@@ -14,8 +13,12 @@
 
 .navbar {
   width: 30rem;
-  display: flex;
-  justify-content: space-evenly;
+
+  & ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 .link {

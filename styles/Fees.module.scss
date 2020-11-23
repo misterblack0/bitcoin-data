@@ -1,12 +1,5 @@
-.feesContainer {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .container {
-  height: 21rem;
+  height: 20rem;
   background-color: #24204b;
   display: flex;
   flex-direction: column;
@@ -14,19 +7,22 @@
   border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
 }
 
+.feesContainer {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .heading {
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  font-weight: 600;
-  height: 6rem;
   padding-left: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 6rem;
   background-color: #2e285f;
   color: #fff;
-
-  & span {
-    font-weight: 400;
-  }
 }
 
 .feesBox {
@@ -44,6 +40,7 @@
 
   & span {
     font-size: 4rem;
+    font-weight: 900;
     color: #fff;
   }
 }
