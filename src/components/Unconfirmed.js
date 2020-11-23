@@ -39,15 +39,11 @@ export default function Unconfirmed() {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Unconfirmed transactions</h1>
-
-
       <div className={styles.eloadholder}>
-	<div className={styles.mloader}>
-  <div className={styles.data}>{numberFormat(data.count)}</div>
-	</div>
-</div>
-      
-
+        <div className={styles.mloader}>
+          <div className={styles.data}>{numberFormat(data.count)}</div>
+        </div>
+      </div>
     </div>
   );
 }
