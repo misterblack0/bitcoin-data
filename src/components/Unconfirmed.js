@@ -1,6 +1,5 @@
 import useSWR from "swr";
 import styles from "../../styles/Unconfirmed.module.scss";
-import cx from "classnames";
 
 const fetcher = async (url) => {
   const res = await fetch(url);

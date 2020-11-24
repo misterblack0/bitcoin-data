@@ -1,5 +1,5 @@
 .container {
-  height: 35rem;
+  height: 55rem;
   background-color: #211D45; 
   overflow: hidden;
   border-radius: 0.5rem;
@@ -17,8 +17,10 @@
 }
 
 .chart {
-  background-color: #24204b;
-  
+  height: 90%;
+  width: 100%;
+
+ 
 }
 
 .loader {
