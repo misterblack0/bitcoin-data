@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
-  gap: 5rem 0.1rem;
+  gap: 3rem 0.1rem;
   grid-template-areas:
     "headerContainer headerContainer headerContainer headerContainer"
     "feesContainer feesContainer feesContainer feesContainer"
