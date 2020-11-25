@@ -20,9 +20,9 @@ export default function Home() {
       <div className={styles.unconfirmedContainer}>
         <Unconfirmed />
       </div>
-      {/* <div className={styles.blocksContainer}>
+      <div className={styles.blocksContainer}>
         <Blocks />
-      </div> */}
+      </div>
     </div>
   );
 }

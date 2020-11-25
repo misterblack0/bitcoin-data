@@ -1,5 +1,7 @@
 import useSWR from "swr";
 import styles from "../../styles/Mempool.module.scss";
+import MempoolChart from "./MempoolChart";
+
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -30,15 +32,12 @@ export default function Mempool() {
   if (error) return "An error has occurred.";
   if (!data) return <span className={styles.loader}></span>;
 
-  const numberFormat = (num) => {
-    const options = { maximumFractionDigits: 0 };
-    return new Intl.NumberFormat("en-US", options).format(num);
-  };
-
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Mempool Chart</h1>
-      <div className={styles.chart}></div>
+      <div className={styles.chart}>
+        <MempoolChart />
+      </div>
     </div>
   );
 }

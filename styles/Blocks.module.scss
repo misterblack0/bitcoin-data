@@ -1,27 +1,15 @@
 .container {
+  height: 35rem;
+  background-color: #211D45; 
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 5rem;
+
+  font-size: 1.5rem;
   color: #fff;
-  width: 30rem;
-  
-  padding: 8rem;
-  background-color: #24204B;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3rem;
-
-  font-size: 1.8rem;
 }
 
-.cardTitle {
-  font-size: 2rem;
-  font-weight: 400;
-}
 
-.header {
-  color: #5B568F;
-}
 
 @media (max-width: 600px) {
   

@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { Fragment, useMemo } from "react";
+import { useMemo } from "react";
 import Table from "./Table";
 import styles from "../../styles/Blocks.module.scss";
 
@@ -41,10 +41,49 @@ export default function Blocks() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
 
+
+
+
+ /*  function timeSince(date) {
+
+    var seconds = Math.floor(((new Date().getTime()/1000) - date)),
+    interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) return interval + "years ago";
+
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) return interval + "months ago";
+
+    interval = Math.floor(seconds / 86400);
+    if (interval >= 1) return interval + "days ago";
+
+    interval = Math.floor(seconds / 3600);
+    if (interval >= 1) return interval + "hours ago";
+
+    interval = Math.floor(seconds / 60);
+    if (interval <= 1) return interval + " minute ago";
+    if (interval > 1) return interval + " minutes ago";
+
+    return Math.floor(seconds) + "seconds ago";
+
+
+
+
+    accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
+
+    
+} */
+
+
+
   const columns = useMemo(() => [
     {
       Header: "Height",
       accessor: (item) => <div>{item.height}</div>,
+    },
+    {
+      Header: "Mined",
+      accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
     },
     {
       Header: "Txs",
@@ -60,8 +99,8 @@ export default function Blocks() {
   if (!data) return <span className={styles.loader}></span>;
 
   return (
-    <Fragment>
+    <div className={styles.container}>
       <Table columns={columns} data={data} />
-    </Fragment>
+    </div>
   );
 }
