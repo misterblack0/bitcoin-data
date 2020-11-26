@@ -41,13 +41,9 @@ export default function Blocks() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
 
-
-
-
- /*  function timeSince(date) {
-
-    var seconds = Math.floor(((new Date().getTime()/1000) - date)),
-    interval = Math.floor(seconds / 31536000);
+  function timeSince(date) {
+    var seconds = Math.floor(new Date().getTime() / 1000 - date),
+      interval = Math.floor(seconds / 31536000);
 
     if (interval > 1) return interval + "years ago";
 
@@ -65,29 +61,33 @@ export default function Blocks() {
     if (interval > 1) return interval + " minutes ago";
 
     return Math.floor(seconds) + "seconds ago";
+  }
 
+  const numberFormat = (num) => {
+    const options = { maximumFractionDigits: 0 };
+    return new Intl.NumberFormat("en-US", options).format(num);
+  };
 
-
-
-    accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
-
-    
-} */
-
+  if (error) return "An error has occurred.";
+  if (!data) return <span className={styles.loader}></span>;
 
 
   const columns = useMemo(() => [
     {
       Header: "Height",
-      accessor: (item) => <div>{item.height}</div>,
+      accessor: (item) => (
+        <div>
+          <a href={`${item.id}`}>{item.height}</a>
+        </div>
+      ),
     },
     {
       Header: "Mined",
-      accessor: (item) => <div>{item.timestamp}</div>,
+      accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
     },
     {
       Header: "Txs",
-      accessor: (item) => <div>{item.tx_count}</div>,
+      accessor: (item) => <div>{numberFormat(item.tx_count)}</div>,
     },
     {
       Header: "Block Size",
@@ -95,9 +95,7 @@ export default function Blocks() {
     },
   ]);
 
-  if (error) return "An error has occurred.";
-  if (!data) return <span className={styles.loader}></span>;
-
+ 
   return (
     <div className={styles.container}>
       <Table columns={columns} data={data} />

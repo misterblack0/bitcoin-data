@@ -1,5 +1,5 @@
 import { useTable } from "react-table";
-import styles from "../../styles/Blocks.module.scss";
+import styles from "../../styles/Table.module.scss";
 
 export default function Table({ columns, data }) {
   // Use the useTable Hook to send the columns and data to build the table
@@ -19,10 +19,8 @@ export default function Table({ columns, data }) {
     - react-table doesn't have UI, it's headless. We just need to put the react-table props from the Hooks, and it will do its magic automatically
   */
   return (
-    <div className={styles.container}>
-      <h1 className={styles.cardTitle}>Latest blocks</h1>
-    <table {...getTableProps()}>
-      <thead className={styles.header}>
+    <table className={styles.container} {...getTableProps()}>
+      {/* <thead className={styles.header}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
@@ -30,20 +28,19 @@ export default function Table({ columns, data }) {
             ))}
           </tr>
         ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
+      </thead> */}
+      <tbody className={styles.body} {...getTableBodyProps()}>
+        {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr className={styles.test} {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return <td  className={styles.test2} {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
             </tr>
           );
         })}
       </tbody>
     </table>
-    </div>
   );
 }
