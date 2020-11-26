@@ -3,6 +3,7 @@ import Fees from "../src/components/Fees";
 import Mempool from "../src/components/Mempool";
 import Unconfirmed from "../src/components/Unconfirmed";
 import Blocks from "../src/components/Blocks";
+import FearGreed from "../src/components/FearGreed";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -22,6 +23,9 @@ export default function Home() {
       </div>
       <div className={styles.blocksContainer}>
         <Blocks />
+      </div>
+      <div className={styles.fearGreedContainer}>
+        <FearGreed />
       </div>
     </div>
   );

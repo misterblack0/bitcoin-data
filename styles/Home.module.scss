@@ -2,29 +2,41 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
-  gap: 3rem 0.1rem;
+  gap: 3rem 3rem;
+
   grid-template-areas:
     "headerContainer headerContainer headerContainer headerContainer"
     "feesContainer feesContainer feesContainer feesContainer"
     "mempoolContainer mempoolContainer mempoolContainer unconfirmedContainer"
-    "blocksContainer blocksContainer blocksContainer blocksContainer";
+    "blocksContainer blocksContainer blocksContainer blocksContainer"
+    "fearGreedContainer fearGreedContainer fearGreedContainer fearGreedContainer";
 }
 .headerContainer {
   grid-area: headerContainer;
 }
 .feesContainer {
   grid-area: feesContainer;
-  padding: 0 5rem;
 }
 .unconfirmedContainer {
   grid-area: unconfirmedContainer;
-  padding: 0 5rem;
 }
 .mempoolContainer {
   grid-area: mempoolContainer;
-  padding: 0 5rem;
 }
 .blocksContainer {
   grid-area: blocksContainer;
+}
+.fearGreedContainer {
+  grid-area: fearGreedContainer;
+}
+
+.feesContainer,
+.mempoolContainer,
+.blocksContainer,
+.fearGreedContainer {
   padding: 0 5rem;
+}
+
+.unconfirmedContainer {
+  padding-right: 5rem;
 }

@@ -83,7 +83,7 @@ export default function Blocks() {
     },
     {
       Header: "Mined",
-      accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
+      accessor: (item) => <div>{item.timestamp}</div>,
     },
     {
       Header: "Txs",
