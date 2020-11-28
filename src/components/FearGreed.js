@@ -37,7 +37,9 @@ export default function Unconfirmed() {
 
   const apiData = data.data[0].value;
 
-  const fearGreedIndex = [{ completed: apiData }];
+
+
+  const fearGreedIndex = [{completed: apiData }];
 
   return (
     <div className={styles.container}>

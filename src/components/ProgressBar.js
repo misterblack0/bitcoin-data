@@ -9,13 +9,9 @@ export default function ProgressBar(props) {
 
   return (
     <div className={styles.container}>
-
-
-
       <div className={styles.filler} style={fillerStyles}>
-        <span className={styles.label}>{`${completed}%`}</span>
+        <span className={styles.label}>{`${completed}`}</span>
       </div>
-      </div>
- 
+    </div>
   );
 }

@@ -5,7 +5,6 @@
   border-radius: 0.5rem;
   margin: 15rem;
   display: flex;
-
   background: -webkit-linear-gradient(
     90deg,
     #fa7f66 25%,
@@ -16,7 +15,6 @@
     #86df4f 75%,
     #86df4f 100%
   );
-
   background: -o-linear-gradient(
     90deg,
     #fa7f66 25%,
@@ -27,7 +25,6 @@
     #86df4f 75%,
     #86df4f 100%
   );
-
   background: -moz-linear-gradient(
     90deg,
     #fa7f66 25%,
@@ -38,7 +35,6 @@
     #86df4f 75%,
     #86df4f 100%
   );
-
   background: linear-gradient(
     90deg,
     #fa7f66 25%,
@@ -53,35 +49,33 @@
 
 .label {
   font-size: 2rem;
-  padding: 0.5rem;
-  color: #000;
+  color: #00000080;
   font-weight: 500;
-
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  border-radius: 50px;
-  color: rgba(0, 0, 0, 0.5);
-
-  background: #fff;
-  height: 50px;
+  display: flex;
   justify-content: center;
-  width: 50px;
+  align-items: center;
+  border: 0.2rem solid rgba(0, 0, 0, 0.5);
+  border-radius: 5rem;
+  background: #fff;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
   position: absolute;
-  top: 125px;
+  top: 12.5rem;
   -webkit-transition: left 2s;
   transition: left 2s;
 }
 
 .label:after {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
   content: " ";
-  height: 70px;
+  height: 5.5rem;
   position: absolute;
-  top: 38px;
-  width: 2px;
+  top: 4.8rem;
+  width: 0.2rem;
 }
 
 .filler {
-  height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
