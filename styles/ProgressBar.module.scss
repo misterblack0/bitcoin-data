@@ -1,13 +1,44 @@
 .container {
-  height: 20px;
+  height: 8rem;
   width: 80%;
   background-color: #e0e0de;
-  border-radius: 50px;
-  margin: 50px;
+  border-radius: 0.5rem;
+  margin: 15rem;
+  display: flex;
+}
+
+.container2 {
+    background-color: green;
+    width: 75%;
+    height: 8rem;
+   
+}
+
+.container3 {
+    background-color: red;
+    width: 75%;
+    height: 8rem;
+}
+
+.container4 {
+    background-color: yellow;
+    width: 75%;
+   
 }
 
 .label {
-  padding: 5px;
-  color: white;
+  padding: 0.5rem;
+  color: #fff;
   font-weight: 500;
+}
+
+.filler {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: inherit;
+  transition: width 1s ease-in-out;
+  background-color: #6a1b9a;
+  width: 50%;
 }
