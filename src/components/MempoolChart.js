@@ -1,6 +1,6 @@
 import { VictoryChart, VictoryTheme, VictoryArea, VictoryAxis } from "victory";
 
-export default function MempoolChart() {
+const MempoolChart = () => {
   return (
     <VictoryChart width={2000} height={450} theme={VictoryTheme.material}>
       <VictoryAxis
@@ -32,4 +32,6 @@ export default function MempoolChart() {
       />
     </VictoryChart>
   );
-}
+};
+
+export default MempoolChart;

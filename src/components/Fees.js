@@ -16,7 +16,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Fees() {
+const Fees = () => {
   const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
@@ -47,4 +47,6 @@ export default function Fees() {
       </div>
     </div>
   );
-}
+};
+
+export default Fees;

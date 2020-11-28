@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import styles from "../../styles/Mempool.module.scss";
 import MempoolChart from "./MempoolChart";
-
+import Heading from "../components/Heading";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -17,7 +17,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Mempool() {
+const Mempool = () => {
   const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_MEMPOOL, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
@@ -40,4 +40,6 @@ export default function Mempool() {
       </div>
     </div>
   );
-}
+};
+
+export default Mempool;

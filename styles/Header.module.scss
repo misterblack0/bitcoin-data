@@ -1,28 +1,8 @@
 .container {
   height: 8rem;
-  background-color: #211D45; 
+  background-color: #211d45;
   display: flex;
   align-items: center;
   padding-left: 4rem;
   color: #fff;
-}
-
-.logo {
-  font-size: 1.5rem;
-}
-
-.navbar {
-  width: 30rem;
-
-  & ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-  }
-}
-
-.link {
-  color: #6863A0;
-  font-size: 1.5rem;
-  font-weight: 700;
 }

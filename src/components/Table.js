@@ -1,7 +1,7 @@
 import { useTable } from "react-table";
 import styles from "../../styles/Table.module.scss";
 
-export default function Table({ columns, data }) {
+const Table = ({ columns, data }) => {
   // Use the useTable Hook to send the columns and data to build the table
   const {
     getTableProps, // table props from react-table
@@ -35,7 +35,11 @@ export default function Table({ columns, data }) {
           return (
             <tr className={styles.test} {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <td  className={styles.test2} {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return (
+                  <td className={styles.test2} {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </td>
+                );
               })}
             </tr>
           );
@@ -43,4 +47,6 @@ export default function Table({ columns, data }) {
       </tbody>
     </table>
   );
-}
+};
+
+export default Table;

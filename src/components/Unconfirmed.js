@@ -15,7 +15,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Unconfirmed() {
+const Unconfirmed = () => {
   const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_MEMPOOL, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
@@ -45,4 +45,6 @@ export default function Unconfirmed() {
       </div>
     </div>
   );
-}
+};
+
+export default Unconfirmed;

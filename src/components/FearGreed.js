@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import styles from "../../styles/FearGreed.module.scss";
 import ProgressBar from "../components/ProgressBar";
+import Heading from "../components/Heading";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -16,7 +17,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Unconfirmed() {
+const Unconfirmed = () => {
   const { data, error } = useSWR(
     process.env.NEXT_PUBLIC_API_FEARGREED,
     fetcher,
@@ -37,16 +38,16 @@ export default function Unconfirmed() {
 
   const apiData = data.data[0].value;
 
-
-
-  const fearGreedIndex = [{completed: apiData }];
+  const fearGreedIndex = [{ completed: apiData }];
 
   return (
     <div className={styles.container}>
-    <h1 className={styles.heading}>Crypto Fear and Greed Index</h1>
+      <Heading title="Crypto Fear and Greed Index" />
       {fearGreedIndex.map((item, idx) => (
         <ProgressBar key={idx} completed={item.completed} />
       ))}
     </div>
   );
-}
+};
+
+export default Unconfirmed;

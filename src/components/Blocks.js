@@ -17,7 +17,7 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-export default function Blocks() {
+const Blocks = () => {
   const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_BLOCKS, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
@@ -99,4 +99,6 @@ export default function Blocks() {
       <Table columns={columns} data={data} />
     </div>
   );
-}
+};
+
+export default Blocks;
