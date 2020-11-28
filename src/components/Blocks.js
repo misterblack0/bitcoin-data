@@ -71,7 +71,6 @@ export default function Blocks() {
   if (error) return "An error has occurred.";
   if (!data) return <span className={styles.loader}></span>;
 
-
   const columns = useMemo(() => [
     {
       Header: "Height",
@@ -95,7 +94,6 @@ export default function Blocks() {
     },
   ]);
 
- 
   return (
     <div className={styles.container}>
       <Table columns={columns} data={data} />

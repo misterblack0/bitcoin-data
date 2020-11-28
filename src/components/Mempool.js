@@ -34,7 +34,7 @@ export default function Mempool() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Mempool Chart</h1>
+      <Heading title="Mempool Chart" />
       <div className={styles.chart}>
         <MempoolChart />
       </div>

@@ -1,8 +1,6 @@
 import styles from "../../styles/ProgressBar.module.scss";
 
-export default function ProgressBar(props) {
-  const { completed } = props;
-
+export default function ProgressBar({ completed }) {
   const fillerStyles = {
     width: `${completed}%`,
   };

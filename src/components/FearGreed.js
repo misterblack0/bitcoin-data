@@ -43,6 +43,7 @@ export default function Unconfirmed() {
 
   return (
     <div className={styles.container}>
+    <h1 className={styles.heading}>Crypto Fear and Greed Index</h1>
       {fearGreedIndex.map((item, idx) => (
         <ProgressBar key={idx} completed={item.completed} />
       ))}

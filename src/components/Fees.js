@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import styles from "../../styles/Fees.module.scss";
+import Heading from "../components/Heading";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -32,9 +33,7 @@ export default function Fees() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>
-        Bitcoin Fees
-      </h1>
+      <Heading title="Bitcoin Fees" />
       <div className={styles.feesContainer}>
         <div className={styles.feesBox}>
           <h2>Low priority</h2> <span>{data.hourFee} sat / vB</span>

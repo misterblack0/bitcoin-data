@@ -5,5 +5,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
   position: relative;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 6rem;
+  background-color: #24204B;
+  color: #6863A0;
 }
