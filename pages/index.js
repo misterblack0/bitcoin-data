@@ -15,7 +15,7 @@ export default function Home() {
       <div className={styles.feesContainer}>
         <Fees />
       </div>
-      <div className={styles.mempoolContainer}>
+{/*       <div className={styles.mempoolContainer}>
         <Mempool />
       </div>
       <div className={styles.unconfirmedContainer}>
@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       <div className={styles.blocksContainer}>
         <Blocks />
-      </div>
+      </div> */}
       <div className={styles.fearGreedContainer}>
         <FearGreed />
       </div>

@@ -1,36 +1,26 @@
+import styles from "../../styles/ProgressBar.module.scss";
+
 const ProgressBar = (props) => {
-    const { bgcolor, completed } = props;
-  
-    const containerStyles = {
-      height: 20,
-      width: '80%',
-      backgroundColor: "#e0e0de",
-      borderRadius: 50,
-      margin: 50
-    }
-  
-    const fillerStyles = {
-      height: '100%',
-      width: `${completed}%`,
-      backgroundColor: bgcolor,
-      borderRadius: 'inherit',
-      transition: 'width 1s ease-in-out',
-      textAlign: 'right'
-    }
-  
-    const labelStyles = {
-      padding: 5,
-      color: 'white',
-      fontWeight: 'bold'
-    }
-  
-    return (
-      <div style={containerStyles}>
-        <div style={fillerStyles}>
-          <span style={labelStyles}>{`${completed}%`}</span>
-        </div>
-      </div>
-    );
+  const { bgcolor, completed } = props;
+
+  const fillerStyles = {
+    height: "100%",
+    width: `${completed}%`,
+    backgroundColor: "#6a1b9a",
+    borderRadius: "inherit",
+    transition: "width 1s ease-in-out",
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
   };
-  
-  export default ProgressBar;
+
+  return (
+    <div className={styles.container}>
+      <div style={fillerStyles}>
+        <span className={styles.label}>{`${completed}%`}</span>
+      </div>
+    </div>
+  );
+};
+
+export default ProgressBar;
