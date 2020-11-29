@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { useMemo } from "react";
 import Table from "./Table";
+import Heading from "./Heading";
 import styles from "../../styles/Blocks.module.scss";
 
 const fetcher = async (url) => {
@@ -68,9 +69,6 @@ const Blocks = () => {
     return new Intl.NumberFormat("en-US", options).format(num);
   };
 
-  if (error) return "An error has occurred.";
-  if (!data) return <span className={styles.loader}></span>;
-
   const columns = useMemo(() => [
     {
       Header: "Height",
@@ -94,8 +92,12 @@ const Blocks = () => {
     },
   ]);
 
+  if (error) return "An error has occurred.";
+  if (!data) return <span className={styles.loader}></span>;
+
   return (
     <div className={styles.container}>
+     <Heading title="Blocks" />
       <Table columns={columns} data={data} />
     </div>
   );

@@ -1,6 +1,5 @@
 import useSWR from "swr";
-import styles from "../../styles/Fees.module.scss";
-import Heading from "../components/Heading";
+import styles from "../../styles/Exchanges.module.scss";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -16,8 +15,8 @@ const fetcher = async (url) => {
   return res.json();
 };
 
-const Fees = () => {
-  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
+const ExchangesVolume = () => {
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_EXCHANGES, fetcher, {
     onErrorRetry: (error, revalidate, { retryCount }) => {
       // Never retry on 404.
       if (error.status === 404) return;
@@ -31,22 +30,16 @@ const Fees = () => {
   if (error) return "An error has occurred.";
   if (!data) return <span className={styles.loader}></span>;
 
+  const numberFormat = (num) => {
+    const options = { maximumFractionDigits: 0 };
+    return new Intl.NumberFormat("en-US", options).format(num);
+  };
+
   return (
-    <div className={styles.container}>
-      <Heading title="Bitcoin Fees" />
-      <div className={styles.feesContainer}>
-        <div className={styles.feesBox}>
-          <h2>Low priority</h2> <span>{data.hourFee} sat / vB</span>
-        </div>
-        <div className={styles.feesBox}>
-          <h2>Medium priority</h2> <span>{data.halfHourFee} sat / vB</span>
-        </div>
-        <div className={styles.feesBox}>
-          <h2>High priority</h2> <span>{data.fastestFee} sat / vB</span>
-        </div>
-      </div>
+    <div>
+      
     </div>
   );
 };
 
-export default Fees;
+export default ExchangesVolume;
