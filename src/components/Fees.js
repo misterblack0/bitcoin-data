@@ -28,6 +28,7 @@ const Fees = () => {
     },
   });
 
+  
   if (error) return "An error has occurred.";
   if (!data) return <span className={styles.loader}></span>;
 
