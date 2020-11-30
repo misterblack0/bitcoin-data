@@ -24,9 +24,6 @@ export default function Home() {
       <div className={styles.blocksContainer}>
         <Blocks />
       </div>
-      <div className={styles.fearGreedContainer}>
-        <FearGreed />
-      </div>
     </div>
   );
 }

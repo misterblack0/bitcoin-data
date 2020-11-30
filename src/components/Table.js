@@ -19,7 +19,7 @@ const Table = ({ columns, data }) => {
     - react-table doesn't have UI, it's headless. We just need to put the react-table props from the Hooks, and it will do its magic automatically
   */
   return (
-    <table className={styles.container} {...getTableProps()}>
+    <table className={styles.table} {...getTableProps()}>
       {/* <thead className={styles.header}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -29,7 +29,7 @@ const Table = ({ columns, data }) => {
           </tr>
         ))}
       </thead> */}
-      <tbody className={styles.body} {...getTableBodyProps()}>
+      <tbody className={styles.tableBody} {...getTableBodyProps()}>
         {rows.map((row) => {
           prepareRow(row);
           return (

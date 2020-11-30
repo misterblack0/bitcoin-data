@@ -1,12 +1,12 @@
-.container {
-  height: 100%;
+.table {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.body {
+.tableBody {
   display: flex;
+  margin-top: 2.5rem;
 }
 
 .block {
@@ -23,4 +23,5 @@
     rgb(147, 57, 244) 0.166225%,
     rgb(16, 95, 176) 100%
   );
+  border-radius: 0.2rem;
 }
