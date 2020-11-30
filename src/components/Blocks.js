@@ -46,16 +46,12 @@ const Blocks = () => {
     var seconds = Math.floor(new Date().getTime() / 1000 - date),
       interval = Math.floor(seconds / 31536000);
 
-    if (interval > 1) return interval + "years ago";
-
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) return interval + "months ago";
-
     interval = Math.floor(seconds / 86400);
-    if (interval >= 1) return interval + "days ago";
+    if (interval >= 1) return interval + " days ago";
 
     interval = Math.floor(seconds / 3600);
-    if (interval >= 1) return interval + "hours ago";
+    if (interval > 1) return interval + " hours ago";
+    if (interval >= 1) return interval + " hour ago";
 
     interval = Math.floor(seconds / 60);
     if (interval <= 1) return interval + " minute ago";
@@ -79,16 +75,22 @@ const Blocks = () => {
       ),
     },
     {
-      Header: "Mined",
-      accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
+      Header: "Block Size",
+      accessor: (item) => (
+        <div className={styles.blockSize}>{formatBytes(item.size)}</div>
+      ),
     },
     {
       Header: "Txs",
-      accessor: (item) => <div>{numberFormat(item.tx_count)}</div>,
+      accessor: (item) => (
+        <div className={styles.transactions}>
+          {numberFormat(item.tx_count)} transactions
+        </div>
+      ),
     },
     {
-      Header: "Block Size",
-      accessor: (item) => <div>{formatBytes(item.size)}</div>,
+      Header: "Mined",
+      accessor: (item) => <div>{timeSince(item.timestamp)}</div>,
     },
   ]);
 
@@ -97,7 +99,7 @@ const Blocks = () => {
 
   return (
     <div className={styles.container}>
-     <Heading title="Blocks" />
+      <Heading title="Latest Blocks" />
       <Table columns={columns} data={data} />
     </div>
   );

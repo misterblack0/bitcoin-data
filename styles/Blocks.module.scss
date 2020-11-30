@@ -1,16 +1,23 @@
 .container {
-  height: 35rem;
-  background-color: #211D45; 
+  height: 25rem;
+  background-color: #211d45;
   overflow: hidden;
   border-radius: 0.5rem;
   margin-bottom: 5rem;
-
   font-size: 1.5rem;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
+.blockSize {
+  font-size: 2rem;
+  font-weight: 700;
+}
 
+.transactions {
+  font-size: 1.2rem;
+}
 
 @media (max-width: 600px) {
-  
 }

@@ -33,13 +33,9 @@ const Table = ({ columns, data }) => {
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr className={styles.test} {...row.getRowProps()}>
+            <tr className={styles.block} {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return (
-                  <td className={styles.test2} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </td>
-                );
+                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
             </tr>
           );
