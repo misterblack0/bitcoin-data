@@ -1,15 +1,16 @@
+@import "./config";
+
 .navbar {
   width: 30rem;
 
   & ul {
+    @extend %flex-evenly;
     list-style: none;
-    display: flex;
-    justify-content: space-evenly;
   }
 }
 
 .link {
-  color: #6863a0;
+  color: $heading-color;
   font-size: 1.5rem;
   font-weight: 700;
 }

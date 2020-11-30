@@ -1,8 +1,7 @@
 @import "./config";
 
 .heading {
-  display: flex;
-  align-items: center;
+  @extend %align-center;
   padding-left: 3rem;
   font-size: 2rem;
   font-weight: 400;

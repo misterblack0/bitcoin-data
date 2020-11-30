@@ -1,16 +1,15 @@
+@import "./config";
+
 .container {
   height: 35rem;
-  background-color: #211D45; 
+  background-color: $container-bg-color;
   overflow: hidden;
   border-radius: 0.5rem;
 }
 
-
 .chart {
   height: 100%;
-  
-padding-bottom: 5rem;
- 
+  padding-bottom: 5rem;
 }
 
 .loader {

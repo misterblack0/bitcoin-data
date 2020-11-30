@@ -1,18 +1,16 @@
 @import "./config";
 
 .container {
+  @extend %flex-column;
   background-color: #211d45;
   height: 35rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  @extend %flex-column;
   position: relative;
 }
 
 .heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend %flex-center;
   font-size: 2rem;
   font-weight: 400;
   height: 6rem;

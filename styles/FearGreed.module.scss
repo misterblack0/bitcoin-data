@@ -1,21 +1,10 @@
 @import "./config";
 
 .container {
+  @extend %flex-column;
   background-color: $container-bg-color;
   height: 20rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  @extend %flex-column;
   position: relative;
-}
-
-.heading {
-  display: flex;
-  align-items: center;
-  padding-left: 3rem;
-  font-size: 2rem;
-  font-weight: 400;
-  height: 6rem;
-  background-color: #24204b;
-  color: #6863a0;
 }
