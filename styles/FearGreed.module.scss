@@ -1,10 +1,11 @@
+@import "./config";
+
 .container {
-  background-color: #211d45;
+  background-color: $container-bg-color;
   height: 20rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  @extend %flex-column;
   position: relative;
 }
 

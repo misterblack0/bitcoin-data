@@ -1,3 +1,5 @@
+@import "./config";
+
 .heading {
   display: flex;
   align-items: center;
@@ -5,6 +7,6 @@
   font-size: 2rem;
   font-weight: 400;
   height: 6rem;
-  background-color: #24204b;
-  color: #6863a0;
+  background-color: $heading-bg-color;
+  color: $heading-color;
 }

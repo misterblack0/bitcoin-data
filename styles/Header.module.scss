@@ -1,6 +1,8 @@
+@import "./config";
+
 .container {
   height: 8rem;
-  background-color: #211d45;
+  background-color: $container-bg-color;
   display: flex;
   align-items: center;
   padding-left: 4rem;
