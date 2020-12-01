@@ -1,5 +1,7 @@
 import useSWR from "swr";
-import styles from "../../styles/Exchanges.module.scss";
+import styles from "../../styles/ExchangesVolume.module.scss";
+import Heading from "./Heading";
+import { VictoryChart, VictoryTheme, VictoryBar, VictoryAxis } from "victory";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -35,9 +37,41 @@ const ExchangesVolume = () => {
     return new Intl.NumberFormat("en-US", options).format(num);
   };
 
+ /*  console.log(data[0].open_interest_btc); */
+
+  const data1 = [
+    {quarter: 1, earnings: 13000},
+    {quarter: 2, earnings: 16500},
+    {quarter: 3, earnings: 14250},
+    {quarter: 4, earnings: 19000},
+    {quarter: 5, earnings: 19000}
+  ];
+
   return (
-    <div>
+    <div className={styles.container}>
+    <Heading title="OI BTC"/>
       
+    <VictoryChart
+    width={1500} height={300}
+        // adding the material theme provided with Victory
+        theme={VictoryTheme.material}
+        domainPadding={70}
+      >
+        <VictoryAxis
+          tickValues={[1, 2, 3, 4, 5]}
+          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
+        />
+        <VictoryAxis
+          dependentAxis
+          tickFormat={(x) => (`$${x / 1000}k`)}
+        />
+        <VictoryBar
+          data={data1}
+          x="quarter"
+          y="earnings"
+        />
+      </VictoryChart>
+
     </div>
   );
 };

@@ -1,0 +1,25 @@
+@import "./config";
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3rem 3rem;
+  padding: 5rem;
+  grid-template-areas:
+    "a b"
+    "c d";
+}
+
+.a {
+  grid-area: a;
+}
+.b {
+  grid-area: b;
+}
+.c {
+  grid-area: c;
+}
+.d {
+  grid-area: d;
+}

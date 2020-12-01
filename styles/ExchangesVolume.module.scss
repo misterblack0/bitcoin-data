@@ -1,7 +1,8 @@
 @import "./config";
 
 .container {
-  height: 35rem;
+  @extend %flex-column;
+  height: 20rem;
   background-color: $container-bg-color;
   overflow: hidden;
   border-radius: 0.5rem;
