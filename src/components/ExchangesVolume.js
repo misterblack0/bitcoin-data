@@ -62,6 +62,11 @@ const ExchangesVolume = () => {
           tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
         />
         <VictoryAxis
+
+style={{
+   
+    opacity: 0.4,
+}}
           dependentAxis
           tickFormat={(x) => (`$${x / 1000}k`)}
         />

@@ -3,16 +3,16 @@ import { VictoryChart, VictoryTheme, VictoryArea, VictoryAxis } from "victory";
 const MempoolChart = () => {
   return (
     <VictoryChart width={2000} height={450} theme={VictoryTheme.material}>
-      <VictoryAxis
+    {/*   <VictoryAxis
         // tickValues specifies both the number of ticks and where
         // they are placed on the axis
         tickValues={[2.11, 3.9, 6.1, 8.05]}
         tickFormat={(t) => `${Math.round(t)}k`}
-      />
+      /> */}
       <VictoryAxis
         dependentAxis
         // tickFormat specifies how ticks should be displayed
-        tickFormat={(x) => `$${x / 1000}k`}
+        tickFormat={(x) => `${x} MvB`}
       />
 
       <VictoryArea

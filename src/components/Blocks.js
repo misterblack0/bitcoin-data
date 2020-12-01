@@ -42,7 +42,7 @@ const Blocks = () => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
 
-  function timeSince(date) {
+  const timeSince = (date) => {
     var seconds = Math.floor(new Date().getTime() / 1000 - date),
       interval = Math.floor(seconds / 31536000);
 
