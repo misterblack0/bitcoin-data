@@ -37,14 +37,23 @@ const ExchangesVolume = () => {
     return new Intl.NumberFormat("en-US", options).format(num);
   };
 
- /*  console.log(data[0].open_interest_btc); */
+/* const binanceData = data[0].open_interest_btc;
+const okexData = data[1].open_interest_btc;
+const huobiData = data[3].open_interest_btc;
+const bybitData = data[4].open_interest_btc;
+const bitmexData = data[5].open_interest_btc;
+const ftxData = data[6].open_interest_btc;
+const deribitData = data[7].open_interest_btc;
+const bitfinexData = data[12].open_interest_btc;
+const phemexData = data[18].open_interest_btc;
+const krakenData = data[21].open_interest_btc; */
 
   const data1 = [
-    {quarter: 1, earnings: 13000},
-    {quarter: 2, earnings: 16500},
-    {quarter: 3, earnings: 14250},
-    {quarter: 4, earnings: 19000},
-    {quarter: 5, earnings: 19000}
+    {quarter: 1, earnings: 1000},
+    {quarter: 2, earnings: 2000},
+    {quarter: 3, earnings: 3000},
+    {quarter: 4, earnings: 4000},
+    {quarter: 5, earnings: 5000}
   ];
 
   return (
@@ -52,14 +61,14 @@ const ExchangesVolume = () => {
     <Heading title="OI BTC"/>
       
     <VictoryChart
-    width={1500} height={300}
+    width={1200} height={300}
         // adding the material theme provided with Victory
         theme={VictoryTheme.material}
         domainPadding={70}
       >
         <VictoryAxis
           tickValues={[1, 2, 3, 4, 5]}
-          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
+          tickFormat={["Binance", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
         />
         <VictoryAxis
 
@@ -68,7 +77,7 @@ style={{
     opacity: 0.4,
 }}
           dependentAxis
-          tickFormat={(x) => (`$${x / 1000}k`)}
+          tickFormat={(x) => (`$${x / 1000}k BTC`)}
         />
         <VictoryBar
           data={data1}

@@ -70,7 +70,7 @@ const Blocks = () => {
       Header: "Height",
       accessor: (item) => (
         <div>
-          <a href={`${item.id}`}>{item.height}</a>
+          <a href={`block/${item.id}`}>{item.height}</a>
         </div>
       ),
     },
