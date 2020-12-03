@@ -26,7 +26,7 @@ const Mempool = () => {
         <MempoolChart />
       </div>
     </div>
-  );
+  ); I
 };
 
 export default Mempool;

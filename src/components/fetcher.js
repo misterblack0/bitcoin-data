@@ -11,3 +11,4 @@ export const fetcher = async (url) => {
     }
     return res.json();
   };
+  
