@@ -1,9 +1,0 @@
-@import "./config";
-
-.container {
-  @extend %align-center;
-  height: 8rem;
-  background-color: $container-bg-color;
-  padding-left: 4rem;
-  color: $white-color;
-}

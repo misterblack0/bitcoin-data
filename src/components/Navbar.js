@@ -1,28 +1,36 @@
+import React from "react";
 import Link from "next/link";
-import styles from "../../styles/Navbar.module.scss";
+import styled from "styled-components";
+import { navLinks } from "../config";
+
+const StyledNavbar = styled.nav`
+    width: 30rem;
+
+    & ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+
+    & a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--light-indigo);
+    }
+`;
 
 const Navbar = () => {
-  return (
-    <div className={styles.navbar}>
-      <ul>
-        <li>
-          <Link href="/">
-            <a className={styles.link}>Overview</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/blocks">
-            <a className={styles.link}>Blocks</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/graphs">
-            <a className={styles.link}>Graphs</a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
+    return (
+        <StyledNavbar>
+            <ul>
+                {navLinks.map(({ url, name }, i) => (
+                    <li key={i}>
+                        <Link href={url}>{name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </StyledNavbar>
+    );
 };
 
 export default Navbar;
