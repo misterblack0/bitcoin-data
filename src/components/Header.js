@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
     height: 5rem;
     padding-left: 4rem;
     color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 const Logo = styled.div`

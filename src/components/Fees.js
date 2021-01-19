@@ -7,20 +7,19 @@ const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     height: 20rem;
-    background-color: var(--indigo);
+    background-color: var(--dark);
     overflow: hidden;
-    border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+    border-radius: 3rem;
 `;
 
 const StyledHeading = styled.h1`
     display: flex;
     align-items: center;
     padding-left: 3rem;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    height: 6rem;
-    background-color: var(--white)
-    color: $heading-color;
+    height: 2.5rem;
+    color: var(--white);
 `;
 
 const StyledBody = styled.div`
@@ -31,21 +30,28 @@ const StyledBody = styled.div`
 `;
 
 const StyledItem = styled.div`
+    border-color: (#767676, #858585);
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.2rem;
-    line-height: 350%;
-    color: #6863a0;
+    color: var(--white);
+    border: 1px solid #2c2f36;
+    border-radius: 2rem;
+    padding: 1rem;
 
     & h2 {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
+        color: var(--light-gray);
     }
 
     & span {
+        padding: 1rem;
         font-size: 4rem;
+        width: 100%;
         font-weight: 900;
-        color: var(--white);
+
+        border-radius: 2rem;
     }
 `;
 
@@ -64,7 +70,7 @@ const StyledLoader = styled.span`
 `;
 
 const Fees = () => {
-    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
+    const { data, error } = useSWR(process.env.NEXT_PUBLIC_FEES_API, fetcher, {
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;

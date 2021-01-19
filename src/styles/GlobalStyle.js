@@ -3,46 +3,13 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
  
   :root {
-    --indigo: #24204b;
-    --dark-indigo: #211d45;
-    --darker-indigo: #2c2f36;
-    --light-indigo: #6863a0;
+    --lighter-dark: #2c2f36;
     --white: #fff;
+    --light-gray: #C3C5CB;
     --gray: #C5C5C3;
-    
-
-
-
-${
-    "" /*     %flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-%flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-%align-center {
-  display: flex;
-  align-items: center;
-}
-
-%flex-evenly {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-%align-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-}
-
-
+    --dark: #212429;
+    --blue: #153D6F;
+    --light-blue: #6DA8FF;
 
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; 
@@ -73,7 +40,7 @@ ${
     box-sizing: inherit;
   }
   ::selection {
-    background-color: var(--secondary);
+    background-color: var(--gray);
     color: var(--white);
   }
   body {
@@ -83,7 +50,7 @@ ${
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--darker-indigo);
+    background-color: var(--lighter-dark);
     color: var(--white);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);

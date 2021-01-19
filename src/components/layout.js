@@ -9,6 +9,10 @@ const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    & #content {
+        margin: 5rem;
+    }
 `;
 
 const Layout = ({ children }) => {
