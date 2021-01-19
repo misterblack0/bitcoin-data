@@ -55,22 +55,9 @@ const StyledItem = styled.div`
     }
 `;
 
-const StyledLoader = styled.span`
-    overflow: hidden;
-    position: relative;
-    -webkit-animation: progress 2s ease-in-out infinite;
-    animation: progress 2s ease-in-out infinite;
-    background: #2e324e no-repeat;
-    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #5d6182, hsla(0, 0%, 100%, 0));
-    background-size: 200px 100%;
-    border-radius: 4px;
-    width: 100%;
-    height: 14px;
-    display: inline-block;
-`;
-
 const Fees = () => {
-    const { data, error } = useSWR(process.env.NEXT_PUBLIC_FEES_API, fetcher, {
+    const { data, error } = useSWR("https://mempool.space/api/v1/fees/recommended", fetcher, {
+        // process.env.NEXT_PUBLIC_API_FEES
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;
@@ -82,7 +69,7 @@ const Fees = () => {
     });
 
     if (error) return "An error has occurred.";
-    if (!data) return <StyledLoader />;
+    if (!data) return "Data could not be fetched.";
     console.log(data);
     return (
         <StyledContent>
