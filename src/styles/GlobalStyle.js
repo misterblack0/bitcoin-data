@@ -5,9 +5,11 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --indigo: #24204b;
     --dark-indigo: #211d45;
-    --darker-indigo: #15122d;
+    --darker-indigo: #2c2f36;
     --light-indigo: #6863a0;
     --white: #fff;
+    --gray: #C5C5C3;
+    
 
 
 
