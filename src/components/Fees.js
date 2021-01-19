@@ -8,7 +8,6 @@ const StyledContent = styled.div`
     flex-direction: column;
     height: 20rem;
     background-color: var(--dark);
-    overflow: hidden;
     border-radius: 3rem;
 `;
 
@@ -70,7 +69,7 @@ const Fees = () => {
 
     if (error) return "An error has occurred.";
     if (!data) return "Data could not be fetched.";
-    console.log(data);
+
     return (
         <StyledContent>
             <StyledHeading>Bitcoin Fees</StyledHeading>

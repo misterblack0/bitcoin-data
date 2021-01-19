@@ -1,17 +1,15 @@
 import React from "react";
 import Layout from "../src/components/layout";
 import Fees from "../src/components/Fees";
-
-/* import Fees from "../src/components/Fees";
-import Mempool from "../src/components/Mempool";
 import Unconfirmed from "../src/components/Unconfirmed";
- */
+import LatestTxs from "../src/components/LatestTxs";
 
 export default function IndexPage() {
     return (
         <Layout>
             <Fees />
-            {/* <Unconfirmed /> */}
+            <Unconfirmed />
+            <LatestTxs />
         </Layout>
     );
 }
