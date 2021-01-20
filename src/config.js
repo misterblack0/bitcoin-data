@@ -12,5 +12,7 @@ module.exports = {
             name: "Test",
             url: "/#test"
         }
-    ]
+    ],
+
+    latestTransactions: ["TXID", "Amount", "USD", "Fee"]
 };
