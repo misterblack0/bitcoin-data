@@ -42,7 +42,7 @@ const LatestBlocks = () => {
 
     return (
         <StyledContent>
-            <StyledHeading>Latest transactions</StyledHeading>
+            <StyledHeading>Latest blocks</StyledHeading>
             <Table columns={BlocksColumns} data={data} />
         </StyledContent>
     );

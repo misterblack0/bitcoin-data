@@ -1,3 +1,5 @@
+import { numberFormat, currencyFormat, formatBytes, timeSince } from "./dataFormat";
+
 function truncate(str, n) {
     return str.length > n ? str.substr(0, n - 1) : str;
 }
@@ -14,7 +16,8 @@ export const TxsColumns = [
     },
     {
         Header: "USD",
-        accessor: "vsize"
+        accessor: "vsize",
+        Cell: ({ value }) => currencyFormat(value)
     },
     {
         Header: "Fee",
@@ -29,14 +32,17 @@ export const BlocksColumns = [
     },
     {
         Header: "Mined",
-        accessor: "timestamp"
+        accessor: "timestamp",
+        Cell: ({ value }) => timeSince(value)
     },
     {
         Header: "TXs",
-        accessor: "tx_count"
+        accessor: "tx_count",
+        Cell: ({ value }) => numberFormat(value)
     },
     {
         Header: "Size",
-        accessor: "size"
+        accessor: "size",
+        Cell: ({ value }) => formatBytes(value)
     }
 ];
