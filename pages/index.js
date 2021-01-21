@@ -3,6 +3,7 @@ import Layout from "../src/components/layout";
 import Fees from "../src/components/Fees";
 import Unconfirmed from "../src/components/Unconfirmed";
 import LatestTxs from "../src/components/LatestTxs";
+import LatestBlocks from "../src/components/LatestBlocks";
 
 export default function IndexPage() {
     return (
@@ -10,6 +11,7 @@ export default function IndexPage() {
             <Fees />
             <Unconfirmed />
             <LatestTxs />
+            <LatestBlocks />
         </Layout>
     );
 }

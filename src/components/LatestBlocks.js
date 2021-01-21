@@ -2,7 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import { fetcher } from "./fetcher";
 import styled from "styled-components";
-import { TxsColumns } from "./columns";
+import { BlocksColumns } from "./columns";
 import { Table } from "./Table";
 
 const StyledContent = styled.div`
@@ -25,8 +25,8 @@ const StyledHeading = styled.h1`
     color: var(--white);
 `;
 
-const LatestTxs = () => {
-    const { data, error } = useSWR("https://mempool.space/api/mempool/recent", fetcher, {
+const LatestBlocks = () => {
+    const { data, error } = useSWR("https://mempool.space/api/blocks", fetcher, {
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;
@@ -43,9 +43,9 @@ const LatestTxs = () => {
     return (
         <StyledContent>
             <StyledHeading>Latest transactions</StyledHeading>
-            <Table columns={TxsColumns} data={data} />
+            <Table columns={BlocksColumns} data={data} />
         </StyledContent>
     );
 };
 
-export default LatestTxs;
+export default LatestBlocks;
