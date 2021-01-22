@@ -9,9 +9,17 @@ const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: center;
 
     & #content {
-        margin: 5rem;
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 1280px) {
+            margin: 4rem;
+        }
     }
 `;
 

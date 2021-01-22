@@ -6,22 +6,21 @@ import styled from "styled-components";
 const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 15rem;
+    width: 100%;
+    height: 100%;
     background-color: var(--dark);
     border-radius: 3rem;
-    margin-top: 3rem;
+    padding: 2rem;
 `;
 
 const StyledHeading = styled.h1`
-    font-size: 1.3rem;
-    font-weight: 400;
-    height: 2.5rem;
-    color: var(--white);
     display: flex;
+    align-items: center;
     justify-content: center;
-
-    z-index: 5;
+    color: var(--white);
+    height: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
 `;
 
 const StyledBody = styled.div`

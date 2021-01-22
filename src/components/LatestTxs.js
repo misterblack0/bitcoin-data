@@ -8,11 +8,11 @@ import { Table } from "./Table";
 const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 26.5rem;
+    width: 100%;
+    height: 100%;
     background-color: var(--dark);
     border-radius: 3rem;
-    margin-top: 3rem;
+    padding: 2rem;
 `;
 
 const StyledHeading = styled.h1`
@@ -21,7 +21,7 @@ const StyledHeading = styled.h1`
     padding-left: 3rem;
     font-size: 1.3rem;
     font-weight: 400;
-    height: 2.5rem;
+    height: 1rem;
     color: var(--white);
 `;
 
