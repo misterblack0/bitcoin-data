@@ -13,6 +13,8 @@ const StyledContent = styled.div`
     background-color: var(--dark);
     border-radius: 3rem;
     padding: 2rem;
+
+    margin-bottom: 2rem; // DE STERS CAND ADAUG GRID
 `;
 
 const StyledHeading = styled.h1`

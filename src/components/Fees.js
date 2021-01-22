@@ -12,7 +12,7 @@ const StyledContent = styled.div`
     border-radius: 3rem;
     padding: 2rem;
 
-    margin-bottom: 2rem; // DE STERS CAND ADAUGAM GRID
+    margin-bottom: 2rem; // DE STERS CAND ADAUG GRID
 
     @media (min-width: 768px) {
     }
@@ -50,14 +50,8 @@ const StyledBody = styled.div`
     justify-content: space-evenly;
     align-items: center;
 
-    @media (min-width: 768px) {
-    }
-
-    @media (min-width: 1024px) {
-        flex-direction: row;
-    }
-
     @media (min-width: 1280px) {
+        flex-direction: row;
     }
 `;
 
@@ -94,16 +88,10 @@ const StyledItem = styled.div`
         justify-content: center;
         padding: 1rem;
         font-size: 4rem;
-        width: 100%;
         font-weight: 900;
-        border-radius: 2rem;
-        @media (min-width: 768px) {
-        }
 
         @media (min-width: 1024px) {
-        }
-
-        @media (min-width: 1280px) {
+            white-space: nowrap;
         }
     }
 `;

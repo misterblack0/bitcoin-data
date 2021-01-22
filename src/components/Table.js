@@ -3,14 +3,7 @@ import { useTable } from "react-table";
 import PropTypes from "prop-types";
 
 export const Table = ({ columns, data }) => {
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        footerGroups,
-        rows,
-        prepareRow
-    } = useTable({
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
         columns,
         data
     });
@@ -45,17 +38,6 @@ export const Table = ({ columns, data }) => {
                         );
                     })}
                 </tbody>
-                <tfoot>
-                    {footerGroups.map((footerGroup) => (
-                        <tr key={footerGroup} {...footerGroup.getFooterGroupProps()}>
-                            {footerGroup.headers.map((column) => (
-                                <td key={column} {...column.getFooterProps()}>
-                                    {column.render("Footer")}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                </tfoot>
             </table>
         </>
     );
