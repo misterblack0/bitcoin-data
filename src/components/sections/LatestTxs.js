@@ -1,7 +1,9 @@
 import React from "react";
 import useSWR from "swr";
-import { fetcher } from "./fetcher";
+import { fetcher } from "../fetcher";
 import styled from "styled-components";
+import { TxsColumns } from "../columns";
+import { Table } from "../Table";
 
 const StyledContent = styled.div`
     display: flex;
@@ -17,26 +19,16 @@ const StyledContent = styled.div`
 
 const StyledHeading = styled.h1`
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: var(--white);
-    height: 1rem;
-    font-size: 1.5rem;
+    padding-left: 3rem;
+    font-size: 1.3rem;
     font-weight: 400;
+    height: 1rem;
+    color: var(--white);
 `;
 
-const StyledBody = styled.div`
-    font-size: 5rem;
-    font-weight: 900;
-    color: #fff;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-`;
-
-const Unconfirmed = () => {
-    const { data, error } = useSWR("https://mempool.space/api/mempool", fetcher, {
+const LatestTxs = () => {
+    const { data, error } = useSWR("https://mempool.space/api/mempool/recent", fetcher, {
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;
@@ -50,17 +42,12 @@ const Unconfirmed = () => {
     if (error) return "An error has occurred.";
     if (!data) return "Data could not be fetched.";
 
-    const numberFormat = (num) => {
-        const options = { maximumFractionDigits: 0 };
-        return new Intl.NumberFormat("en-US", options).format(num);
-    };
-
     return (
         <StyledContent>
-            <StyledHeading>Unconfirmed transactions</StyledHeading>
-            <StyledBody>{numberFormat(data.count)}</StyledBody>
+            <StyledHeading>Latest transactions</StyledHeading>
+            <Table columns={TxsColumns} data={data} />
         </StyledContent>
     );
 };
 
-export default Unconfirmed;
+export default LatestTxs;

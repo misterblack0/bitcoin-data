@@ -1,6 +1,11 @@
 import React from "react";
 import { useTable } from "react-table";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledTH = styled.th`
+    text-align: left;
+`;
 
 export const Table = ({ columns, data }) => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
@@ -15,9 +20,9 @@ export const Table = ({ columns, data }) => {
                     {headerGroups.map((headerGroup) => (
                         <tr key={headerGroup} {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map((column) => (
-                                <th key={column} {...column.getHeaderProps()}>
+                                <StyledTH key={column} {...column.getHeaderProps()}>
                                     {column.render("Header")}
-                                </th>
+                                </StyledTH>
                             ))}
                         </tr>
                     ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 import styled from "styled-components";
-import { fetcher } from "./fetcher";
+import { fetcher } from "../fetcher";
 
 const StyledContent = styled.div`
     display: flex;
