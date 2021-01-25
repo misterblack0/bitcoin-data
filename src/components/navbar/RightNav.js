@@ -13,7 +13,7 @@ const Ul = styled.ul`
     }
     & a {
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 400;
         text-decoration: none;
         color: var(--gray);
         transition: all 0.1s;
@@ -24,18 +24,25 @@ const Ul = styled.ul`
     }
     @media (max-width: 768px) {
         flex-flow: column nowrap;
-        background-color: #212429;
-
+        align-items: center;
+        justify-content: center;
+        background-color: #2c3037;
         position: fixed;
         transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-        top: 0;
+        top: -20px;
         right: 0;
+        padding: 50px 10px;
         height: 100vh;
-        width: 300px;
-        padding-top: 3.5rem;
-        transition: transform 0.3s ease-in-out;
-        li {
+        width: min(75vw, 400px);
+        box-shadow: -10px 0px 30px -15px var(--shadow);
+        transition: var(--transition);
+
+        & li {
             color: #fff;
+        }
+
+        & a {
+            font-size: 1.5rem;
         }
     }
 `;

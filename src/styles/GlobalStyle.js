@@ -7,9 +7,9 @@ const GlobalStyle = createGlobalStyle`
     --white: #fff;
     --light-gray: #C3C5CB;
     --gray: #C5C5C3;
-    --dark: #212429;
-    --blue: #153D6F;
-    --light-blue: #6DA8FF;
+    --dark-gray: #2c3037;
+    --dark: #212429;  
+    --shadow: rgba(2,12,27,0.7);
 
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; 

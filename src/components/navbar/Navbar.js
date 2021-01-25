@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Burger from "./Burger";
+import Hamburger from "./Hamburger";
 
 const Nav = styled.nav`
     width: 100%;
@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <Nav>
             <Logo>OnChain Data</Logo>
-            <Burger />
+            <Hamburger />
         </Nav>
     );
 };

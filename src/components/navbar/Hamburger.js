@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import RightNav from "./RightNav";
 
-const StyledBurger = styled.div`
+const StyledHamburgerButton = styled.div`
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -17,9 +17,9 @@ const StyledBurger = styled.div`
     }
     div {
         width: 2rem;
-        height: 0.25rem;
+        height: 0.2rem;
         background-color: #fff;
-        border-radius: 10px;
+        border-radius: var(--border-radius);
         transform-origin: 1px;
         transition: all 0.3s linear;
         &:nth-child(1) {
@@ -35,18 +35,18 @@ const StyledBurger = styled.div`
     }
 `;
 
-const Burger = () => {
+const Hamburger = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <StyledBurger open={open} onClick={() => setOpen(!open)}>
+            <StyledHamburgerButton open={open} onClick={() => setOpen(!open)}>
                 <div />
                 <div />
                 <div />
-            </StyledBurger>
+            </StyledHamburgerButton>
             <RightNav open={open} />
         </>
     );
 };
-export default Burger;
+export default Hamburger;
