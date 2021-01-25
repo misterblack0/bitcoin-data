@@ -1,4 +1,4 @@
-import { numberFormat, currencyFormat, formatBytes, timeSince } from "./dataFormat";
+import { numberFormat, currencyFormat, formatBytes, timeSince, feeFormat } from "./dataFormat";
 
 function truncate(str, n) {
     return str.length > n ? str.substr(0, n - 1) : str;
@@ -21,7 +21,8 @@ export const TxsColumns = [
     },
     {
         Header: "Fee",
-        accessor: "fee"
+        accessor: "fee",
+        Cell: ({ value }) => feeFormat(value)
     }
 ];
 

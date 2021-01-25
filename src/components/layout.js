@@ -8,8 +8,8 @@ import Navbar from "./navbar/Navbar";
 const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     justify-content: center;
+    min-height: 100vh;
 
     & #content {
         margin: 2rem;
@@ -18,7 +18,7 @@ const StyledContent = styled.div`
         align-items: center;
 
         @media (min-width: 1280px) {
-            margin: 1rem 4rem;
+            margin: 2rem 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;

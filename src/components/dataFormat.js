@@ -1,5 +1,3 @@
-// Format data in a currency value for the price, with fraction digits ---------work in progress----------
-
 export const priceFormat = (num) => {
     const options = {
         style: "currency",
@@ -8,8 +6,6 @@ export const priceFormat = (num) => {
     };
     return new Intl.NumberFormat("en-US", options).format(num);
 };
-
-// Format data in a currency value
 
 export const currencyFormat = (num) => {
     const options = {
@@ -21,10 +17,13 @@ export const currencyFormat = (num) => {
     return new Intl.NumberFormat("en-US", options).format(num);
 };
 
-// Format data in a number value with a minimum number of significant digits
-
 export const numberFormat = (num) => {
     const options = { maximumFractionDigits: 0 };
+    return new Intl.NumberFormat("en-US", options).format(num);
+};
+
+export const feeFormat = (num) => {
+    const options = { maximumIntegerDigits: 1 };
     return new Intl.NumberFormat("en-US", options).format(num);
 };
 

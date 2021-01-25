@@ -14,6 +14,7 @@ const StyledContent = styled.div`
     background-color: var(--dark);
     border-radius: 3rem;
     padding: 1.5rem;
+    margin-bottom: 2rem;
 `;
 
 const StyledHeading = styled.h1`
