@@ -4,15 +4,15 @@ import { fetcher } from "../fetcher";
 import styled from "styled-components";
 
 const StyledContent = styled.div`
+    grid-area: unconfirmed;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: var(--dark);
     border-radius: 3rem;
-    padding: 2rem;
-
-    margin-bottom: 2rem; // DE STERS CAND ADAUG GRID
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 `;
 
 const StyledHeading = styled.h1`
@@ -20,7 +20,6 @@ const StyledHeading = styled.h1`
     align-items: center;
     justify-content: center;
     color: var(--white);
-    height: 1rem;
     font-size: 1.5rem;
     font-weight: 400;
 `;

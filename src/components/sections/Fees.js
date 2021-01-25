@@ -4,24 +4,15 @@ import styled from "styled-components";
 import { fetcher } from "../fetcher";
 
 const StyledContent = styled.div`
+    grid-area: fees;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: var(--dark);
     border-radius: 3rem;
-    padding: 2rem;
-
-    margin-bottom: 2rem; // DE STERS CAND ADAUG GRID
-
-    @media (min-width: 768px) {
-    }
-
-    @media (min-width: 1024px) {
-    }
-
-    @media (min-width: 1280px) {
-    }
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 `;
 
 const StyledHeading = styled.h1`
@@ -29,18 +20,8 @@ const StyledHeading = styled.h1`
     align-items: center;
     justify-content: center;
     color: var(--white);
-    height: 1rem;
     font-size: 1.5rem;
     font-weight: 400;
-
-    @media (min-width: 768px) {
-    }
-
-    @media (min-width: 1024px) {
-    }
-
-    @media (min-width: 1280px) {
-    }
 `;
 
 const StyledBody = styled.div`
@@ -68,15 +49,6 @@ const StyledItem = styled.div`
     border-radius: 2rem;
     padding: 1rem;
     margin: 1rem;
-
-    @media (min-width: 768px) {
-    }
-
-    @media (min-width: 1024px) {
-    }
-
-    @media (min-width: 1280px) {
-    }
 
     & h2 {
         font-size: 1.1rem;

@@ -6,24 +6,21 @@ import { BlocksColumns } from "../columns";
 import { Table } from "../Table";
 
 const StyledContent = styled.div`
+    grid-area: latestB;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: var(--dark);
     border-radius: 3rem;
-    padding: 2rem;
-
-    margin-bottom: 2rem; // DE STERS CAND ADAUG GRID
+    padding: 1.5rem;
 `;
 
 const StyledHeading = styled.h1`
     display: flex;
     justify-content: center;
-    padding-left: 3rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    height: 1rem;
     color: var(--white);
 `;
 

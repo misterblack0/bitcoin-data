@@ -3,8 +3,19 @@ import { useTable } from "react-table";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+const StyledTable = styled.table`
+    ${
+        "" /*     width: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; */
+    }
+    text-align: center;
+`;
+
 const StyledTH = styled.th`
-    text-align: left;
+    text-align: center;
 `;
 
 export const Table = ({ columns, data }) => {
@@ -15,7 +26,7 @@ export const Table = ({ columns, data }) => {
 
     return (
         <>
-            <table {...getTableProps()}>
+            <StyledTable {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr key={headerGroup} {...headerGroup.getHeaderGroupProps()}>
@@ -43,7 +54,7 @@ export const Table = ({ columns, data }) => {
                         );
                     })}
                 </tbody>
-            </table>
+            </StyledTable>
         </>
     );
 };
