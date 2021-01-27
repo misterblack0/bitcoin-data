@@ -1,21 +1,18 @@
 import {
-    numberFormat,
+    truncateTxid,
+    amountFormat,
     currencyFormat,
-    formatBytes,
-    timeSince,
     feeFormat,
-    amountFormat
+    timeSince,
+    txsFormat,
+    formatSize
 } from "./dataFormat";
-
-function truncate(str, n) {
-    return str.length > n ? str.substr(0, n - 1) : str;
-}
 
 export const TxsColumns = [
     {
         Header: "TXID",
         accessor: "txid",
-        Cell: ({ value }) => truncate(value, 5)
+        Cell: ({ value }) => truncateTxid(value, 5)
     },
     {
         Header: "Amount",
@@ -47,11 +44,11 @@ export const BlocksColumns = [
     {
         Header: "TXs",
         accessor: "tx_count",
-        Cell: ({ value }) => numberFormat(value)
+        Cell: ({ value }) => txsFormat(value)
     },
     {
         Header: "Size",
         accessor: "size",
-        Cell: ({ value }) => formatBytes(value)
+        Cell: ({ value }) => formatSize(value)
     }
 ];

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledTable = styled.table`
+    padding-right: 1.4rem;
     text-align: right;
     font-size: 1.2rem;
     line-height: 1.8rem;

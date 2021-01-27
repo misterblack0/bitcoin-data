@@ -40,8 +40,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   ::selection {
-    background-color: var(--gray);
-    color: var(--white);
+    background-color: var(--light-gray);
+    color: var(--lighter-dark);
   }
   body {
     margin: 0;

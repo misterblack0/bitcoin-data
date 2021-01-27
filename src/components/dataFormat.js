@@ -1,10 +1,9 @@
-export const priceFormat = (num) => {
-    const options = {
-        style: "currency",
-        currency: "USD"
-        /* maximumFractionDigits: 6, */
-    };
-    return new Intl.NumberFormat("en-US", options).format(num);
+export const truncateTxid = (str, n) => {
+    return str.length > n ? str.substr(0, n - 1) : str;
+};
+
+export const amountFormat = (num) => {
+    return num.toFixed(3) + " BTC";
 };
 
 export const currencyFormat = (num) => {
@@ -13,15 +12,6 @@ export const currencyFormat = (num) => {
         currency: "USD"
     };
     return new Intl.NumberFormat("en-US", options).format(num);
-};
-
-export const numberFormat = (num) => {
-    const options = { maximumFractionDigits: 0 };
-    return new Intl.NumberFormat("en-US", options).format(num);
-};
-
-export const amountFormat = (num) => {
-    return Math.round(num * 100) / 100000 + " BTC";
 };
 
 export const feeFormat = (num) => {
@@ -46,7 +36,12 @@ export const timeSince = (date) => {
     return Math.floor(seconds) + " seconds ago";
 };
 
-export function formatBytes(bytes, decimals = 2) {
+export const txsFormat = (num) => {
+    const options = { maximumFractionDigits: 0 };
+    return new Intl.NumberFormat("en-US", options).format(num);
+};
+
+export function formatSize(bytes, decimals = 2) {
     if (bytes === 0) return "0 Bytes";
 
     const k = 1000; // Change k = 1000 or sizes = ["..."] as you want (bits or bytes)
