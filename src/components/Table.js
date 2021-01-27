@@ -4,18 +4,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledTable = styled.table`
-    ${
-        "" /*     width: 100rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; */
-    }
-    text-align: center;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
 `;
 
 const StyledTH = styled.th`
-    text-align: center;
+    text-align: right;
 `;
 
 export const Table = ({ columns, data }) => {

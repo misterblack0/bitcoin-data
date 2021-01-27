@@ -19,10 +19,12 @@ const StyledContent = styled.div`
 
 const StyledHeading = styled.h1`
     display: flex;
+    align-items: center;
     justify-content: center;
+    color: var(--white);
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--white);
+    margin-bottom: 2rem;
 `;
 
 const LatestBlocks = () => {

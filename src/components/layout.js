@@ -18,11 +18,11 @@ const StyledContent = styled.div`
         align-items: center;
 
         @media (min-width: 1280px) {
-            margin: 2rem 4rem;
+            margin: 0 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            gap: 30px 30px;
+            gap: 0 3rem;
             grid-template-areas:
                 "fees fees fees"
                 "latestT unconfirmed latestB";

@@ -23,6 +23,7 @@ const StyledHeading = styled.h1`
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--white);
+    margin-bottom: 2rem;
 `;
 
 const LatestTxs = () => {

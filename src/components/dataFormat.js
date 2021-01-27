@@ -10,9 +10,7 @@ export const priceFormat = (num) => {
 export const currencyFormat = (num) => {
     const options = {
         style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
+        currency: "USD"
     };
     return new Intl.NumberFormat("en-US", options).format(num);
 };
@@ -22,9 +20,12 @@ export const numberFormat = (num) => {
     return new Intl.NumberFormat("en-US", options).format(num);
 };
 
+export const amountFormat = (num) => {
+    return Math.round(num * 100) / 100000 + " BTC";
+};
+
 export const feeFormat = (num) => {
-    const options = { maximumIntegerDigits: 1 };
-    return new Intl.NumberFormat("en-US", options).format(num);
+    return Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + " sat/vB";
 };
 
 export const timeSince = (date) => {

@@ -8,7 +8,7 @@ const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 70%;
     background-color: var(--dark);
     border-radius: 3rem;
     padding: 1.5rem;

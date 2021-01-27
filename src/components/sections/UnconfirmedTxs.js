@@ -25,7 +25,7 @@ const StyledHeading = styled.h1`
 `;
 
 const StyledBody = styled.div`
-    font-size: 5rem;
+    font-size: 6.5rem;
     font-weight: 900;
     color: #fff;
     display: flex;
