@@ -32,7 +32,7 @@ const StyledHeading = styled.h1`
 `;
 
 const LatestBlocks = () => {
-    const { data, error } = useSWR("https://mempool.space/api/blocks", fetcher, {
+    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_LATESTBLOCKS, fetcher, {
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;

@@ -73,7 +73,7 @@ const StyledItem = styled.div`
 `;
 
 const Fees = () => {
-    const { data, error } = useSWR("https://mempool.space/api/v1/fees/recommended", fetcher, {
+    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
         // process.env.NEXT_PUBLIC_API_FEES
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.

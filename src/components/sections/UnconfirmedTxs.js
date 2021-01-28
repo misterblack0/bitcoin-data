@@ -39,7 +39,7 @@ const StyledBody = styled.div`
 `;
 
 const UnconfirmedTxs = () => {
-    const { data, error } = useSWR("https://mempool.space/api/mempool", fetcher, {
+    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_UNCONFIRMEDTXS, fetcher, {
         onErrorRetry: (error, revalidate, { retryCount }) => {
             // Never retry on 404.
             if (error.status === 404) return;
