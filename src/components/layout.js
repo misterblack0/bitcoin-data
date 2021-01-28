@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
-import Navbar from "./navbar/Navbar";
+// import Navbar from "./navbar/Navbar";
 
 const StyledContent = styled.div`
     display: flex;
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
                 <ThemeProvider theme={theme}>
                     <GlobalStyle />
                     <StyledContent>
-                        <Navbar />
+                        {/* <Navbar /> */}
                         <div id="content">{children}</div>
                     </StyledContent>
                 </ThemeProvider>

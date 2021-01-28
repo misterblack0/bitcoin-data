@@ -3,7 +3,11 @@ export const truncateTxid = (str, n) => {
 };
 
 export const amountFormat = (num) => {
-    return num.toFixed(3) + " BTC";
+    const options = {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    };
+    return new Intl.NumberFormat("en-US", options).format(num);
 };
 
 export const currencyFormat = (num) => {
