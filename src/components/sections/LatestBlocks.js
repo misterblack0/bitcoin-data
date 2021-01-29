@@ -14,7 +14,6 @@ const StyledContent = styled.div`
     background-color: var(--dark);
     border-radius: 3rem;
     padding: 1.5rem;
-    margin-bottom: 2rem;
 
     @media (min-width: 1280px) {
         margin-bottom: 0;

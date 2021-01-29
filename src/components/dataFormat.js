@@ -2,13 +2,7 @@ export const truncateTxid = (str, n) => {
     return str.length > n ? str.substr(0, n - 1) : str;
 };
 
-export const amountFormat = (num) => {
-    const options = {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    };
-    return new Intl.NumberFormat("en-US", options).format(num);
-};
+export const amountFormat = (number) => (number / 100000000).toFixed(8);
 
 export const currencyFormat = (num) => {
     const options = {
