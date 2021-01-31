@@ -86,7 +86,7 @@ const Fees = () => {
     });
 
     if (error) return "An error has occurred.";
-    if (!data) return "Data could not be fetched.";
+    if (!data) return "Loading...";
 
     return (
         <StyledContent>

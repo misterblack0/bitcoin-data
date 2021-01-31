@@ -51,7 +51,7 @@ const UnconfirmedTxs = () => {
     });
 
     if (error) return "An error has occurred.";
-    if (!data) return "Data could not be fetched.";
+    if (!data) return "Loading...";
 
     const numberFormat = (num) => {
         const options = { maximumFractionDigits: 0 };
