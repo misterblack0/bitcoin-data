@@ -27,6 +27,14 @@ module.exports = {
         "prettier/prettier": ["error", {}, { usePrettierrc: true }], // Use our .prettierrc file as source
         "template-curly-spacing": "off", // TODO: Remove when is https://github.com/babel/babel-eslint/issues/530 fixed
         indent: "off", // TODO: Remove when is https://github.com/babel/babel-eslint/issues/530 fixed
-        quotes: ["error", "double"]
+        quotes: ["error", "double"],
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                components: ["Link"],
+                specialLink: ["hrefLeft", "hrefRight"],
+                aspects: ["invalidHref", "preferButton"]
+            }
+        ]
     }
 };
