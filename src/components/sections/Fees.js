@@ -1,7 +1,6 @@
 import React from "react";
-import useSWR from "swr";
 import styled from "styled-components";
-import { fetcher } from "../fetcher";
+import useFetch from "../useFetch";
 
 const StyledContent = styled.div`
     grid-area: fees;
@@ -73,18 +72,7 @@ const StyledItem = styled.div`
 `;
 
 const Fees = () => {
-    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_FEES, fetcher, {
-        // process.env.NEXT_PUBLIC_API_FEES
-        onErrorRetry: (error, revalidate, { retryCount }) => {
-            // Never retry on 404.
-            if (error.status === 404) return;
-            // Only retry up to 10 times.
-            if (retryCount >= 10) return;
-            // Retry after 5 seconds.
-            setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 5000);
-        }
-    });
-
+    const { data, error } = useFetch(process.env.NEXT_PUBLIC_API_FEES);
     if (error) return "An error has occurred.";
     if (!data) return "Loading...";
 

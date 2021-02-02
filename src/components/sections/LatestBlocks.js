@@ -1,6 +1,5 @@
 import React from "react";
-import useSWR from "swr";
-import { fetcher } from "../fetcher";
+import useFetch from "../useFetch";
 import styled from "styled-components";
 import { BlocksColumns } from "../columns";
 import { Table } from "../Table";
@@ -31,17 +30,7 @@ const StyledHeading = styled.h1`
 `;
 
 const LatestBlocks = () => {
-    const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_LATESTBLOCKS, fetcher, {
-        onErrorRetry: (error, revalidate, { retryCount }) => {
-            // Never retry on 404.
-            if (error.status === 404) return;
-            // Only retry up to 10 times.
-            if (retryCount >= 10) return;
-            // Retry after 5 seconds.
-            setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 5000);
-        }
-    });
-
+    const { data, error } = useFetch(process.env.NEXT_PUBLIC_API_LATESTBLOCKS);
     if (error) return "An error has occurred.";
     if (!data) return "Loading...";
 
