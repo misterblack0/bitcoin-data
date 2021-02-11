@@ -38,7 +38,7 @@ const StyledBody = styled.div`
 `;
 
 const UnconfirmedTxs = () => {
-    const { data, error } = useFetch(process.env.NEXT_PUBLIC_API_UNCONFIRMEDTXS);
+    const { data, error } = useFetch("https://mempool.space/api/mempool");
     if (error) return "An error has occurred.";
     if (!data) return "Loading...";
 
