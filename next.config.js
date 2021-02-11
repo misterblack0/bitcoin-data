@@ -3,7 +3,7 @@ module.exports = {
         return [
             {
                 // matching all API routes
-                source: "https://mempool.space/api/mempool*",
+                source: "https://mempool.space/api/mempool",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     { key: "Access-Control-Allow-Origin", value: "*" },
