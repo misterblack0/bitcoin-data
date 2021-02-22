@@ -1,5 +1,9 @@
 export const fetcher = async (url) => {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+        method: "GET",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" }
+    });
     console.log(res);
     // eslint-disable-next-line no-undef
     // If the status code is not in the range 200-299,
